@@ -1,0 +1,126 @@
+.dashboard-layout{
+  display:flex;
+  min-height:100vh;
+}
+
+.dashboard-content{
+  flex:1;
+  padding:40px;
+  background:#f8fafc;
+}
+
+.dashboard-content h1{
+  color:#1e1b4b;
+}
+
+.dashboard-subtitle{
+  color:#6b7280;
+  margin-top:10px;
+  margin-bottom:30px;
+}
+
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.dashboard-card{
+  background:white;
+
+  padding:25px;
+
+  border-radius:20px;
+
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.dashboard-card h3{
+  color:#6b7280;
+  margin-bottom:10px;
+}
+
+.dashboard-card h2{
+  color:#7c3aed;
+}
+
+.quick-actions{
+  margin-top:40px;
+}
+
+.action-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+
+.action-buttons button{
+  padding:14px 22px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#7c3aed;
+
+  color:white;
+
+  cursor:pointer;
+}
+
+.activity-section{
+  margin-top:40px;
+
+  background:white;
+
+  padding:25px;
+
+  border-radius:20px;
+
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.activity-section h2{
+  margin-bottom:20px;
+}
+
+.activity-section ul{
+  list-style:none;
+}
+
+.activity-section li{
+  margin-bottom:12px;
+  color:#374151;
+}
+.summary-strip{
+  display:flex;
+  gap:25px;
+  margin:30px 0;
+  flex-wrap:wrap;
+}
+
+.summary-strip div{
+  background:white;
+  padding:18px 25px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.summary-strip h4{
+  color:#6b7280;
+}
+
+.summary-strip p{
+  color:#7c3aed;
+  font-weight:600;
+  margin-top:8px;
+}
+
+.dashboard-card{
+  transition:0.3s;
+}
+
+.dashboard-card:hover{
+  transform:translateY(-6px);
+}

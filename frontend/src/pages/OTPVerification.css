@@ -1,0 +1,101 @@
+.otp-container{
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:linear-gradient(
+    135deg,
+    #fdf4ff,
+    #ede9fe,
+    #dbeafe
+  );
+}
+
+.otp-card{
+  width:500px;
+
+  background:white;
+
+  padding:50px;
+
+  border-radius:25px;
+
+  text-align:center;
+
+  box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+.otp-card h1{
+  color:#1e1b4b;
+  margin-bottom:15px;
+}
+
+.otp-card p{
+  color:#6b7280;
+  margin-bottom:35px;
+}
+
+.otp-boxes{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+
+  margin-bottom:35px;
+}
+
+.otp-boxes input{
+  width:65px;
+  height:65px;
+
+  text-align:center;
+
+  font-size:24px;
+
+  border-radius:12px;
+
+  border:2px solid #d1d5db;
+}
+
+.verify-btn{
+  width:100%;
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#7c3aed;
+
+  color:white;
+
+  font-size:17px;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+.resend-link{
+  display:block;
+
+  margin-top:20px;
+
+  color:#7c3aed;
+
+  cursor:pointer;
+}
+
+.success-message{
+  color:#16a34a;
+  font-weight:600;
+  margin-top:15px;
+}
+
+.error-message{
+  color:#dc2626;
+  font-weight:600;
+  margin-top:15px;
+}

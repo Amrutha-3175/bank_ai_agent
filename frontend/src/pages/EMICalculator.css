@@ -1,0 +1,77 @@
+.emi-container{
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:linear-gradient(
+    135deg,
+    #fdf4ff,
+    #ede9fe,
+    #dbeafe
+  );
+}
+
+.emi-card{
+  width:600px;
+
+  background:white;
+
+  padding:40px;
+
+  border-radius:25px;
+
+  box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+.emi-card h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.emi-card input{
+  width:100%;
+
+  padding:14px;
+
+  margin-bottom:18px;
+
+  border:1px solid #ddd;
+
+  border-radius:10px;
+}
+
+.emi-card button{
+  width:100%;
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#7c3aed;
+
+  color:white;
+
+  cursor:pointer;
+}
+
+.emi-result{
+  margin-top:25px;
+
+  background:#f5f3ff;
+
+  padding:20px;
+
+  border-radius:12px;
+
+  text-align:center;
+
+  font-size:22px;
+
+  font-weight:600;
+
+  color:#7c3aed;
+}
