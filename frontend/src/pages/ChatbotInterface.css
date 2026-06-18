@@ -139,3 +139,15 @@
   color:white;
   font-weight:600;
 }
+.voice-controls{
+  display:flex;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.voice-controls button{
+  padding:10px 15px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}

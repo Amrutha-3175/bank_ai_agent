@@ -1,7 +1,24 @@
 import { useState, useEffect } from "react";
+import SpeechRecognition, {
+  useSpeechRecognition
+} from "react-speech-recognition";
 import "./ChatbotInterface.css";
 
 function ChatbotInterface() {
+  const {
+  transcript,
+  listening,
+  resetTranscript,
+  browserSupportsSpeechRecognition
+} = useSpeechRecognition();
+
+if (!browserSupportsSpeechRecognition) {
+  return (
+    <span>
+      Browser doesn't support speech recognition.
+    </span>
+  );
+}
 
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
@@ -16,6 +33,26 @@ function ChatbotInterface() {
 const handleSuggestionClick = (question) => {
   setMessage(question);
 };
+
+const startListening = () => {
+  console.log("Start button clicked");
+
+  resetTranscript();
+
+  SpeechRecognition.startListening({
+    continuous: false
+  });
+};
+
+const stopListening = () => {
+  console.log("Stop button clicked");
+  console.log("Transcript:", transcript);
+
+  SpeechRecognition.stopListening();
+
+  setMessage(transcript);
+};
+
 const clearChat = () => {
 
   setChat([]);
@@ -168,8 +205,26 @@ useEffect(() => {
   ))}
 
 </div>
-        <div className="input-section">
 
+<div className="voice-controls">
+
+  <button
+    onClick={startListening}
+  >
+    🎤 Start Listening
+  </button>
+
+  <button
+    onClick={stopListening}
+  >
+    🛑 Stop Listening
+  </button>
+
+</div>
+
+
+        <div className="input-section">
+         <p>{transcript}</p>
           <input
             type="text"
             placeholder="Ask something..."
@@ -182,6 +237,14 @@ useEffect(() => {
           <button onClick={handleSend}>
             Send
           </button>
+
+<p>
+
+  {listening
+    ? "🎤 Listening..."
+    : "Microphone Idle"}
+
+</p>
 
         </div>
 

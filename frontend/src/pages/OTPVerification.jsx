@@ -33,6 +33,12 @@ if (
     "generatedOtp"
   );
 
+  console.log(
+  "Generated OTP:",
+  generatedOtp
+);
+
+
 if (otp === generatedOtp) {
 
     setMessage(

@@ -72,6 +72,7 @@ localStorage.setItem(
   generatedOtp
 );
 
+
 localStorage.setItem(
   "userName",
   formData.fullName
