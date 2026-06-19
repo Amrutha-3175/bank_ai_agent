@@ -45,12 +45,15 @@ const startListening = () => {
 };
 
 const stopListening = () => {
-  console.log("Stop button clicked");
-  console.log("Transcript:", transcript);
 
   SpeechRecognition.stopListening();
 
-  setMessage(transcript);
+  setTimeout(() => {
+
+    setMessage(transcript);
+
+  }, 500);
+
 };
 
 const clearChat = () => {
@@ -91,6 +94,11 @@ useEffect(() => {
 
 }, [chat, chatKey]);
 
+useEffect(() => {
+
+  setMessage(transcript);
+
+}, [transcript]); 
 
   const handleSend = async () => {
    
@@ -206,47 +214,44 @@ useEffect(() => {
 
 </div>
 
-<div className="voice-controls">
 
-  <button
-    onClick={startListening}
-  >
-    🎤 Start Listening
-  </button>
-
-  <button
-    onClick={stopListening}
-  >
-    🛑 Stop Listening
-  </button>
-
-</div>
 
 
         <div className="input-section">
-         <p>{transcript}</p>
-          <input
-            type="text"
-            placeholder="Ask something..."
-            value={message}
-            onChange={(e) =>
-              setMessage(e.target.value)
-            }
-          />
 
-          <button onClick={handleSend}>
-            Send
-          </button>
+  <input
+    type="text"
+    placeholder="Ask something..."
+    value={message}
+    onChange={(e) =>
+      setMessage(e.target.value)
+    }
+  />
 
-<p>
+  <button
+    className="mic-btn"
+    onClick={() => {
 
-  {listening
-    ? "🎤 Listening..."
-    : "Microphone Idle"}
+      if (listening) {
 
-</p>
+        stopListening();
 
-        </div>
+      } else {
+
+        startListening();
+
+      }
+
+    }}
+  >
+    {listening ? "🔴" : "🎤"}
+  </button>
+
+  <button onClick={handleSend}>
+    Send
+  </button>
+
+</div>
 
       </div>
 

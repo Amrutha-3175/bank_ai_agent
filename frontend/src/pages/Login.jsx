@@ -72,6 +72,12 @@ localStorage.setItem(
   generatedOtp
 );
 
+console.log("OTP:", generatedOtp);
+
+console.log(
+  "Stored OTP:",
+  localStorage.getItem("generatedOtp")
+);
 
 localStorage.setItem(
   "userName",
